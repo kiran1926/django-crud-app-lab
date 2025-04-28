@@ -1,59 +1,179 @@
+/* Main container styling */
+body {
+  background: linear-gradient(to bottom, rgba(220, 233, 220, 0.5), rgba(234, 244, 234, 0.8));
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.page-header h1 {
+  font-size: 2.8rem;
+  color: #1a472a;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.header-image {
+  height: 60px;
+  margin: 0 15px;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+  transform: translateY(-5px);
+}
+
+/* Card container */
 .card-container {
-    padding: 0 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card styling */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-left: 4px solid #4a7862;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: #f5f9f5;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #1a472a;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.card p {
+  color: #2d5a40;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.card small {
+  color: #4a7862;
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Add a subtle pattern overlay */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234a7862' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: 15px;
+  z-index: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .card {
-    width: 275px;
-    margin: 10px;
-    border: var(--borders);
-    box-shadow: var(--card-box-shadow);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .card-content {
-    padding: 10px;
-    width: 100%;
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 1rem;
   }
-  
-  .usr-img {
-    width: 100%;
-    border-radius: var(--card-border-radius);
+
+  .page-header h1 {
+    font-size: 2.2rem;
   }
-  
-  .card > a {
-    text-decoration: none;
-    color: var(--text-color);
+
+  .header-image {
+    height: 40px;
   }
-  
-  .card h2 {
-    margin: 10px 0;
-    font-size: var(--font-xl);
-  }
-  
-  .card p {
-    margin: 5px 0;
-    font-size: var(--font-reg);
-  }
-  
-  .card-img-container {
-    width: 100%;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: #f8f8f8;
-    border-top-left-radius: var(--card-border-radius);
-    border-top-right-radius: var(--card-border-radius);
-  }
-  
-  .card-img {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    display: block;
-  }
+}
+
+/* Add some fun plant-themed cursors */
+.card {
+  cursor: pointer;
+}
+
+/* Add a subtle gradient overlay on card hover */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(74, 120, 98, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
   

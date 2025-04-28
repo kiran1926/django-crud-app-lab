@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Plant
 
 
 # Create your views here.
@@ -20,22 +20,11 @@ def about(request):
 
 # views.py
 
-class Plant:
-    def __init__(self, name, species, description, age):
-        self.name = name
-        self.species = species
-        self.description = description
-        self.age = age
-
-# Create a list of Cat instances
-plants = [
-    Plant('Money Plant', 'Pilea peperomioides', 'Money Plant is a symbol of prosperity and good fortune.', 1),
-    Plant('Snake Plant', 'Sansevieria trifasciata', 'Snake Plant is a symbol of prosperity and good fortune.', 2),
-    Plant('Dumb Cane', 'Dracaena sp.', 'Dumb Cane is a symbol of prosperity and good fortune.', 3),
-    Plant('Pothos', 'Epipremnum aureum', 'Pothos is a symbol of prosperity and good fortune.', 1)
-]
-
 
 def plants_index(request):
+    plants = Plant.objects.all()
     return render(request, 'plants/index.html', { 'plants' : plants })
 
+def plant_detail(request, plant_id):
+    plant = Plant.objects.get(id=plant_id)
+    return render(request, 'plants/detail.html', { 'plant' : plant })

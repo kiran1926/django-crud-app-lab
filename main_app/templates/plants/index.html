@@ -7,48 +7,45 @@
 
 {% block content %}
 <section class="page-header">
-    <h1>All Plants</h1>
-    <img src="{% static 'images/leaf-decoration.svg' %}" alt="Leaf decoration" class="header-image">
-    <img src="{% static 'images/plant-character.svg' %}" alt="Plant character" class="header-image">
-    <img src="{% static 'images/header-logo.svg' %}" alt="Header logo" class="header-image">
+    <h1>My Plant Collection</h1>
+    <div class="header-images">
+        <img src="{% static 'images/leaf-decoration.svg' %}" alt="Leaf decoration" class="header-image">
+        <img src="{% static 'images/plant-character.svg' %}" alt="Plant character" class="header-image">
+    </div>
 </section>
 
 <section class="card-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="card-img-container">
-                <img src="{% static 'images/spider-plant.jpg' %}" alt="Spider Plant" class="card-img">
+    {% for plant in plants %}
+    <div class="card" style="--animation-order: {{ forloop.counter }}">
+        <a href="{% url 'plant-detail' plant.id %}">
+            <div class="card-content">
+                <div class="card-img-container">
+                    <img src="{% static 'images/spider-plant.jpg' %}" alt="{{ plant.name }}" class="card-img">
+                </div>
+                <h2 class="card-title">{{ plant.name }}</h2>
+                <div class="plant-info">
+                    {% if plant.age > 0 %}
+                    <p>{{ plant.age }} year{{ plant.age|pluralize }} old {{ plant.species }}</p>
+                    {% else %}
+                    <p>A young {{ plant.species }}</p>
+                    {% endif %}
+                    
+                    {% if plant.light_requirements %}
+                    <p class="light-requirement">
+                        <span class="light-indicator light-{{ plant.light_requirements|lower }}"></span>
+                        {{ plant.get_light_requirements_display }}
+                    </p>
+                    {% endif %}
+                </div>
+                <p><small>{{ plant.description|truncatechars:100 }}</small></p>
             </div>
-            <h2 class="card-title">Spider Plant</h2>
-            <p>A 2 year old Chlorophytum comosum</p>
-            <p>
-                <small>A popular houseplant known for its air-purifying abilities and easy care.</small>
-            </p>
-        </div>
+        </a>
     </div>
-    <div class="card">
-        <div class="card-content">
-            <div class="card-img-container">
-                <img src="{% static 'images/snake-plant.jpg' %}" alt="Snake Plant" class="card-img">
-            </div>
-            <h2 class="card-title">Snake Plant</h2>
-            <p>A 3 year old Sansevieria trifasciata</p>
-            <p>
-                <small>Also known as mother-in-law's tongue, it's a hardy plant that thrives on neglect.</small>
-            </p>
-        </div>
+    {% empty %}
+    <div class="empty-collection">
+        <h2>No plants added yet!</h2>
+        <p>Start growing your collection by adding your first plant.</p>
     </div>
-    <div class="card">
-        <div class="card-content">
-            <div class="card-img-container">
-                <img src="{% static 'images/monstera.jpg' %}" alt="Monstera" class="card-img">
-            </div>
-            <h2 class="card-title">Monstera</h2>
-            <p>A 1 year old Monstera deliciosa</p>
-            <p>
-                <small>Famous for its dramatic split leaves, Monstera adds a tropical vibe to any room.</small>
-            </p>
-        </div>
-    </div>
+    {% endfor %}
 </section>
 {% endblock %}
