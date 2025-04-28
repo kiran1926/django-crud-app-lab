@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <title>Cute Plant Character</title>
+  <defs>
+    <linearGradient id="potGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e57373" />
+      <stop offset="100%" stop-color="#c62828" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Flower pot -->
+  <path fill="url(#potGradient)" d="M190,240 C190,240 190,200 190,200 L110,200 L110,240 C110,240 100,280 150,280 C200,280 190,240 190,240 Z" />
+  <ellipse fill="#a1887f" cx="150" cy="200" rx="40" ry="10" />
+  
+  <!-- Stems -->
+  <path fill="none" stroke="#388e3c" stroke-width="8" stroke-linecap="round" 
+        d="M150,200 C150,200 150,150 150,120" />
+  <path fill="none" stroke="#388e3c" stroke-width="6" stroke-linecap="round"
+        d="M150,160 C150,160 120,140 100,150" />
+  <path fill="none" stroke="#388e3c" stroke-width="6" stroke-linecap="round"
+        d="M150,180 C150,180 180,170 200,180" />
+  
+  <!-- Leaves -->
+  <path fill="#66bb6a" d="M100,150 C70,140 65,110 90,100 C115,90 120,120 100,150 Z" />
+  <path fill="#81c784" d="M200,180 C230,170 235,200 210,210 C185,220 180,190 200,180 Z" />
+  
+  <!-- Flower head / face -->
+  <circle fill="#ffeb3b" cx="150" cy="100" r="40" />
+  <circle fill="#fff59d" cx="135" cy="85" r="12" />
+  
+  <!-- Face -->
+  <!-- Eyes -->
+  <circle fill="#3e2723" cx="135" cy="100" r="7" />
+  <circle fill="#3e2723" cx="165" cy="100" r="7" />
+  <!-- Happy smile -->
+  <path fill="none" stroke="#3e2723" stroke-width="3" stroke-linecap="round"
+        d="M140,120 C140,125 160,125 160,120" />
+  
+  <!-- Rosy cheeks -->
+  <circle fill="#e57373" fill-opacity="0.5" cx="125" cy="110" r="8" />
+  <circle fill="#e57373" fill-opacity="0.5" cx="175" cy="110" r="8" />
+</svg>

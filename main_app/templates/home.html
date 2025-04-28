@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+  <!-- Decorative plants -->
+  <img src="{% static 'images/leaf-decoration.svg' %}" alt="Plant decoration" class="plant-decoration plant-left">
+  <img src="{% static 'images/leaf-decoration.svg' %}" alt="Plant decoration" class="plant-decoration plant-right">
+
+  <!-- Hero section -->
+  <div class="home-hero">
+    <h1 class="home-title">FIND YOUR GREEN COMPANION</h1>
+    <p class="home-subtitle">Track your houseplants, manage their care routines, and watch them thrive with our easy-to-use plant collection app!</p>
+    
+    <!-- Search bar -->
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search for plants...">
+      <button class="search-button">Search</button>
+    </div>
+    
+    <!-- Plant showcase -->
+    <div class="plant-showcase">
+      <div class="showcase-item">
+        <img src="{% static 'images/plants/money-plant.svg' %}" alt="Money Plant" class="plant-illustration">
+        <p class="plant-name">Money Plant</p>
+      </div>
+      <div class="showcase-item">
+        <img src="{% static 'images/plants/snake-plant.svg' %}" alt="Snake Plant" class="plant-illustration">
+        <p class="plant-name">Snake Plant</p>
+      </div>
+      <div class="showcase-item">
+        <img src="{% static 'images/plants/dumb-cane.svg' %}" alt="Dumb Cane" class="plant-illustration">
+        <p class="plant-name">Dumb Cane</p>
+      </div>
+      <div class="showcase-item">
+        <img src="{% static 'images/plants/pothos.svg' %}" alt="Pothos" class="plant-illustration">
+        <p class="plant-name">Pothos</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features section -->
+  <div class="features-section">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3 class="feature-title">Track Your Plants</h3>
+      <p class="feature-description">Keep detailed records of all your houseplants in one convenient place, including species, age, and growth progress.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-tint"></i>
+      </div>
+      <h3 class="feature-title">Care Reminders</h3>
+      <p class="feature-description">Never forget to water or fertilize again with customizable care reminders for each of your plant babies.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-sun"></i>
+      </div>
+      <h3 class="feature-title">Light Tracking</h3>
+      <p class="feature-description">Monitor light conditions for optimal plant health and get recommendations for ideal placement in your home.</p>
+    </div>
+  </div>
+
+  <!-- CTA section -->
+  <div class="home-hero">
+    <a href="#" class="cta-button">Start Your Collection</a>
+  </div>
+</div>
+{% endblock %}

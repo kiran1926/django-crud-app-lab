@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <title>Dumb Cane</title>
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8BC34A" />
+      <stop offset="100%" stop-color="#4CAF50" />
+    </linearGradient>
+    <linearGradient id="stemGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7CB342" />
+      <stop offset="100%" stop-color="#558B2F" />
+    </linearGradient>
+    <pattern id="spotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="3" fill="#E8F5E9" opacity="0.7" />
+    </pattern>
+  </defs>
+  
+  <!-- Pot -->
+  <path d="M70,180 L130,180 L140,140 L60,140 Z" fill="#A1887F" />
+  <ellipse cx="100" cy="140" rx="40" ry="5" fill="#8D6E63" />
+  
+  <!-- Stem -->
+  <path d="M100,140 C100,140 95,120 100,100 C105,80 100,60 100,60" stroke="#558B2F" stroke-width="6" stroke-linecap="round" fill="none" />
+  <path d="M100,120 C80,100 60,110 50,90" stroke="#558B2F" stroke-width="5" stroke-linecap="round" fill="none" />
+  <path d="M100,90 C120,70 140,80 150,60" stroke="#558B2F" stroke-width="5" stroke-linecap="round" fill="none" />
+  
+  <!-- Bottom right leaf -->
+  <path d="M50,90 C40,80 45,60 65,55 C85,50 90,75 85,85 C80,95 60,100 50,90 Z" fill="url(#leafGradient)" />
+  <path d="M50,90 C40,80 45,60 65,55 C85,50 90,75 85,85 C80,95 60,100 50,90 Z" fill="url(#spotPattern)" fill-opacity="0.6" />
+  <path d="M65,55 C70,60 75,70 85,85" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7" />
+  
+  <!-- Top right leaf -->
+  <path d="M150,60 C160,50 155,30 135,25 C115,20 110,45 115,55 C120,65 140,70 150,60 Z" fill="url(#leafGradient)" />
+  <path d="M150,60 C160,50 155,30 135,25 C115,20 110,45 115,55 C120,65 140,70 150,60 Z" fill="url(#spotPattern)" fill-opacity="0.6" />
+  <path d="M135,25 C130,30 125,40 115,55" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7" />
+  
+  <!-- Top leaf -->
+  <path d="M100,60 C110,40 100,25 85,25 C70,25 65,40 75,50 C85,60 90,80 100,60 Z" fill="url(#leafGradient)" />
+  <path d="M100,60 C110,40 100,25 85,25 C70,25 65,40 75,50 C85,60 90,80 100,60 Z" fill="url(#spotPattern)" fill-opacity="0.6" />
+  <path d="M85,25 C80,35 75,45 75,50" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7" />
+</svg> 

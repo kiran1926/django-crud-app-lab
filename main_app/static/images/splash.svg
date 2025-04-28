@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Plant Collector Splash</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="bgGradient">
+            <stop stop-color="#e8f5e9" offset="0%"></stop>
+            <stop stop-color="#c8e6c9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" fill="none">
+        <!-- Background -->
+        <rect fill="url(#bgGradient)" x="0" y="0" width="800" height="600" rx="12"></rect>
+        
+        <!-- First potted plant (monstera) -->
+        <g transform="translate(150, 150)">
+            <!-- Pot -->
+            <path d="M80,350 L160,350 L180,220 L60,220 Z" fill="#a1887f" stroke="#8d6e63" stroke-width="3"></path>
+            <!-- Soil -->
+            <path d="M65,230 L175,230 L175,250 C175,250 150,260 120,260 C90,260 65,250 65,250 Z" fill="#5d4037"></path>
+            
+            <!-- Plant Stems -->
+            <path d="M120,230 C120,230 120,150 140,110 C160,70 190,50 190,50" stroke="#388e3c" stroke-width="5" stroke-linecap="round"></path>
+            <path d="M120,230 C120,230 120,180 110,150 C100,120 70,90 70,90" stroke="#388e3c" stroke-width="5" stroke-linecap="round"></path>
+            <path d="M120,230 C120,230 120,210 130,180 C140,150 150,130 150,130" stroke="#388e3c" stroke-width="5" stroke-linecap="round"></path>
+            
+            <!-- Monstera leaves -->
+            <path d="M190,50 C220,40 230,60 220,80 C210,100 190,100 170,90 C150,80 170,60 190,50 Z" fill="#4caf50"></path>
+            <path d="M70,90 C40,80 30,100 40,120 C50,140 70,140 90,130 C110,120 90,100 70,90 Z" fill="#4caf50"></path>
+            <path d="M150,130 C180,120 190,140 180,160 C170,180 150,180 130,170 C110,160 130,140 150,130 Z" fill="#4caf50"></path>
+        </g>
+        
+        <!-- Second potted plant (snake plant) -->
+        <g transform="translate(350, 200)">
+            <!-- Pot -->
+            <path d="M80,300 L160,300 L150,220 L90,220 Z" fill="#e57373" stroke="#ef5350" stroke-width="3"></path>
+            <!-- Soil -->
+            <path d="M95,230 L145,230 L145,240 C145,240 130,245 120,245 C110,245 95,240 95,240 Z" fill="#5d4037"></path>
+            
+            <!-- Snake plant leaves -->
+            <path d="M120,230 L120,100" stroke="#66bb6a" stroke-width="15" stroke-linecap="round"></path>
+            <path d="M100,230 L100,120" stroke="#66bb6a" stroke-width="15" stroke-linecap="round"></path>
+            <path d="M140,230 L140,130" stroke="#66bb6a" stroke-width="15" stroke-linecap="round"></path>
+        </g>
+        
+        <!-- Third potted plant (succulent) -->
+        <g transform="translate(550, 180)">
+            <!-- Pot -->
+            <path d="M60,320 L120,320 L110,270 L70,270 Z" fill="#64b5f6" stroke="#42a5f5" stroke-width="3"></path>
+            <!-- Soil -->
+            <path d="M75,280 L105,280 L105,290 C105,290 95,295 90,295 C85,295 75,290 75,290 Z" fill="#5d4037"></path>
+            
+            <!-- Succulent leaves -->
+            <ellipse cx="90" cy="270" rx="25" ry="10" fill="#81c784"></ellipse>
+            <ellipse cx="90" cy="260" rx="20" ry="10" fill="#a5d6a7"></ellipse>
+            <ellipse cx="90" cy="250" rx="15" ry="7" fill="#c8e6c9"></ellipse>
+            <ellipse cx="90" cy="242" rx="10" ry="5" fill="#e8f5e9"></ellipse>
+        </g>
+        
+        <!-- Text -->
+        <text x="400" y="450" font-family="Arial" font-size="48" fill="#2e7d32" text-anchor="middle">Collect Your Plants</text>
+        <text x="400" y="500" font-family="Arial" font-size="24" fill="#388e3c" text-anchor="middle">Track your houseplant collection</text>
+    </g>
+</svg>

@@ -1,30 +1,66 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="" />
-    <title>Plant Collector</title>
+    <link rel="shortcut icon" type="image/svg" href="{% static 'images/favicon.svg' %}" />
+    <title>{% block title %}Plant Collector{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     {% block head %} 
     {% endblock %}
   </head>
   <body>
-    <header>
-      <div class="header-logo-container">
-        <a href="/">
-          <img src="" alt="The Plant Collector Logo" />
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-     {% block content %} 
-     {% endblock %}
-     </main>
+    <div class="leaf-bg"></div>
+
+    <div class="page-container">
+      <!-- Header with logo, app name, and navigation -->
+      <header class="main-header">
+        <div class="nav-container">
+          <a href="{% url 'home' %}" class="logo-link">
+            <span class="logo">
+              <i class="fas fa-leaf leaf-icon"></i>
+              <span class="app-name">Plant Collector</span>
+            </span>
+          </a>
+          <nav class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="/plants">All Plants</a>
+            <a href="#">Care Tips</a>
+            <a href="{% url 'about' %}">About</a>
+          </nav>
+          <a href="#" class="login-button">Sign in</a>
+        </div>
+      </header>
+
+      <main>
+        {% block content %}
+        <h1 class="home-title">Welcome to Plant Collector</h1>
+        <img src="{% static 'images/splash.svg' %}" alt="Plant Collector Splash" class="splash-image">
+        {% endblock %}
+      </main>
+
+      <!-- Footer section -->
+      <footer class="site-footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <i class="fas fa-leaf"></i>
+            <span>Plant Collector</span>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+          </div>
+          <p class="copyright">© 2023 Plant Collector. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

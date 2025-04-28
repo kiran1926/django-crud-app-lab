@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="600px" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Monstera Leaf Decoration</title>
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66bb6a" />
+      <stop offset="100%" stop-color="#388e3c" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Monstera leaf group -->
+  <g transform="translate(0, 50)">
+    <!-- Main stem -->
+    <path d="M150,500 C150,500 120,350 150,250 C180,150 150,50 150,50" 
+          stroke="#5d4037" stroke-width="15" fill="none" stroke-linecap="round" />
+    
+    <!-- Leaf 1 -->
+    <path d="M150,100 C200,50 300,70 290,150 C280,230 200,200 150,170 C100,200 20,230 10,150 C0,70 100,50 150,100 Z" 
+          fill="url(#leafGradient)" />
+    
+    <!-- Leaf cutouts -->
+    <path d="M150,100 C160,120 180,130 200,120 C220,110 210,90 200,85 C190,80 160,85 150,100 Z" 
+          fill="#f1f8e9" />
+    <path d="M150,100 C140,120 120,130 100,120 C80,110 90,90 100,85 C110,80 140,85 150,100 Z" 
+          fill="#f1f8e9" />
+    
+    <!-- Leaf 2 -->
+    <path d="M150,250 C200,200 300,220 290,300 C280,380 200,350 150,320 C100,350 20,380 10,300 C0,220 100,200 150,250 Z" 
+          fill="url(#leafGradient)" />
+    
+    <!-- Leaf cutouts -->
+    <path d="M150,250 C160,270 180,280 200,270 C220,260 210,240 200,235 C190,230 160,235 150,250 Z" 
+          fill="#f1f8e9" />
+    <path d="M150,250 C140,270 120,280 100,270 C80,260 90,240 100,235 C110,230 140,235 150,250 Z" 
+          fill="#f1f8e9" />
+    <path d="M80,300 C70,310 50,320 40,310 C30,300 40,280 50,275 C60,270 90,275 80,300 Z" 
+          fill="#f1f8e9" />
+    <path d="M220,300 C230,310 250,320 260,310 C270,300 260,280 250,275 C240,270 210,275 220,300 Z" 
+          fill="#f1f8e9" />
+    
+    <!-- Leaf 3 -->
+    <path d="M150,400 C190,350 270,370 260,420 C250,470 190,460 150,440 C110,460 50,470 40,420 C30,370 110,350 150,400 Z" 
+          fill="url(#leafGradient)" />
+    
+    <!-- Leaf cutouts -->
+    <path d="M150,400 C160,410 180,415 190,410 C200,405 195,395 190,392 C185,390 160,395 150,400 Z" 
+          fill="#f1f8e9" />
+    <path d="M150,400 C140,410 120,415 110,410 C100,405 105,395 110,392 C115,390 140,395 150,400 Z" 
+          fill="#f1f8e9" />
+  </g>
+</svg>

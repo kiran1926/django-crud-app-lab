@@ -1,7 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>About the Plant Collector</h1>
-<h2>Contact Details</h2>
-<p>{{ contact_info }}</p>
-{% endblock %}
+<div class="about-container">
+  <div class="about-header">
+    <img src="{% static 'images/plant-character.svg' %}" alt="Plant Character" class="plant-character">
+    <h1>About the Plant Collector</h1>
+  </div>
+  
+  <div class="about-content">
+    <p>I love taking care of houseplants and watching them grow! My collection started with just one succulent, and now I have a mini jungle in my apartment.</p>
+    
+    <div class="fun-fact">
+      <span class="plant-emoji"><i class="fas fa-seedling"></i></span> 
+      Fun Fact: I name all my plants after characters from my favorite books.
+    </div>
+    
+    <p>When I'm not watering my plants or checking for new growth, I enjoy long walks through plant nurseries and botanical gardens. I'm always looking for new leafy friends to add to my collection!</p>
+    
+    <p>This app helps me keep track of all my plant babies - their watering schedules, sunlight needs, and when I last repotted them. It's like a digital plant journal!</p>
+  </div>
+</div>
+{% endblock %} 

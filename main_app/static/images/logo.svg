@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="60px" viewBox="0 0 250 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Plant Collector Logo</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Plant icon -->
+        <g transform="translate(10, 5)" fill="#FFFFFF">
+            <!-- Pot -->
+            <path d="M30,50 L10,50 C8.895,50 8,49.105 8,48 L8,35 C8,33.895 8.895,33 10,33 L30,33 C31.105,33 32,33.895 32,35 L32,48 C32,49.105 31.105,50 30,50 Z" />
+            
+            <!-- Plant stems and leaves -->
+            <path d="M20,33 C20,33 20,25 23,18 C26,11 30,8 30,8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M20,33 C20,33 18,20 15,15 C12,10 6,7 6,7" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+            
+            <!-- Leaf shapes -->
+            <path d="M30,8 C35,6 38,9 36,13 C34,17 30,17 26,15 C22,13 25,10 30,8 Z" />
+            <path d="M6,7 C1,5 -2,8 0,12 C2,16 6,16 10,14 C14,12 11,9 6,7 Z" />
+        </g>
+        
+        <!-- Text "Plant Collector" -->
+        <text x="55" y="36" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">
+            Plant Collector
+        </text>
+    </g>
+</svg>
