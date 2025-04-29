@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Pot -->
+    <path d="M30 80 L90 80 L85 120 L35 120 Z" fill="#8D6E63"/>
+    
+    <!-- Stem -->
+    <path d="M60 80 L60 40" stroke="#4CAF50" stroke-width="4"/>
+    
+    <!-- Drooping Leaves -->
+    <path d="M60 45 C60 45, 40 35, 30 45" stroke="#4CAF50" stroke-width="4" fill="none"/>
+    <path d="M60 60 C60 60, 80 50, 90 60" stroke="#4CAF50" stroke-width="4" fill="none"/>
+    <path d="M60 75 C60 75, 40 65, 30 75" stroke="#4CAF50" stroke-width="4" fill="none"/>
+    
+    <!-- Sad Face -->
+    <circle cx="55" cy="30" r="2" fill="#333333"/>
+    <circle cx="65" cy="30" r="2" fill="#333333"/>
+    <path d="M52 38 C58 35, 62 35, 68 38" stroke="#333333" stroke-width="2" fill="none"/>
+</svg> 

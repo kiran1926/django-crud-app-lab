@@ -38,6 +38,282 @@
   margin-top: 20px;
 }
 
+/* Plant action buttons */
+.plant-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  justify-content: flex-end;
+}
+
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  gap: 1rem;
+}
+
+a.btn.warn {
+  background-color: #ff9800;
+  color: white;
+  box-shadow: 0 4px 6px rgba(255, 152, 0, 0.2);
+}
+
+a.btn.warn:hover {
+  background-color: #f57c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 152, 0, 0.3);
+}
+
+a.btn.danger {
+  background-color: #f44336;
+  color: white;
+  box-shadow: 0 4px 6px rgba(244, 67, 54, 0.2);
+}
+
+a.btn.danger:hover {
+  background-color: #e53935;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(244, 67, 54, 0.3);
+}
+
+/* Add icons to buttons */
+a.btn.warn::before {
+  content: "✏️";
+  font-size: 1.8rem;
+}
+
+a.btn.danger::before {
+  content: "🗑️";
+  font-size: 1.8rem;
+}
+
+/* Care Container Styles */
+.care-container {
+  padding: 0 30px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.watering-section,
+.fertilizer-section {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.subsection-title h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.subsection-title img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Care Form Styles */
+.care-form-container {
+  margin-bottom: 2rem;
+}
+
+.care-form-container h3 {
+  color: #34495e;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.care-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.care-form p {
+  margin: 0 0 1rem 0;
+}
+
+.care-form label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.care-form input,
+.care-form select,
+.care-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.care-form input:focus,
+.care-form select:focus,
+.care-form textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+button.btn.submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button.btn.submit:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Care History Styles */
+.care-history-container {
+  margin-top: 2rem;
+}
+
+.care-history-container h3 {
+  color: #34495e;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.history-table-wrapper {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.history-table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.history-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+  font-size: 1.4rem;
+}
+
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.history-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Cell-specific styles */
+.date-cell {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.amount-badge,
+.type-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Amount badge colors */
+.amount-badge.amount-l {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.amount-badge.amount-m {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.amount-badge.amount-h {
+  background-color: #fbe9e7;
+  color: #d84315;
+}
+
+/* Type badge colors */
+.type-badge.type-o {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.type-badge.type-s {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.type-badge.type-n {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.notes-cell {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.empty-history {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
+
 /* Responsive Design */
 @media only screen and (min-width: 768px) {
   .plant-container {
@@ -53,5 +329,47 @@
   .plant-details {
     width: 60%;
     margin-top: 0;
+  }
+
+  .care-container {
+    flex-direction: row;
+  }
+
+  .watering-section,
+  .fertilizer-section {
+    flex: 1;
+  }
+
+  .history-table td,
+  .history-table th {
+    padding: 15px 20px;
+  }
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 767px) {
+  .plant-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  a.btn {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .subsection-title {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .history-table {
+    font-size: 1.2rem;
+  }
+
+  .amount-badge,
+  .type-badge {
+    font-size: 1rem;
+    padding: 3px 6px;
   }
 }

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="page-header">
+        {% if object %}
+            <h1>Edit {{ object.name }}</h1>
+            <img src="{% static 'images/plants/pothos.svg' %}" alt="Edit Plant" class="header-image" />
+        {% else %}
+            <h1>Add a Plant</h1>
+            <img src="{% static 'images/plants/pothos.svg' %}" alt="Add Plant" class="header-image" />
+        {% endif %}
+    </div>
+
+    <form action="" method="post" class="modern-form">
+        {% csrf_token %}
+        
+        <div class="form-grid">
+            <div class="form-group field-with-icon plant-name">
+                <label for="{{ form.name.id_for_label }}">Plant Name</label>
+                {{ form.name }}
+                {% if form.name.errors %}
+                    <div class="error-message">{{ form.name.errors|join:", " }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group field-with-icon plant-species">
+                <label for="{{ form.species.id_for_label }}">Species</label>
+                {{ form.species }}
+                {% if form.species.errors %}
+                    <div class="error-message">{{ form.species.errors|join:", " }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group field-with-icon plant-age">
+                <label for="{{ form.age.id_for_label }}">Age (years)</label>
+                {{ form.age }}
+                {% if form.age.errors %}
+                    <div class="error-message">{{ form.age.errors|join:", " }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group field-with-icon plant-light">
+                <label for="{{ form.light_requirements.id_for_label }}">Light Requirements</label>
+                {{ form.light_requirements }}
+                {% if form.light_requirements.errors %}
+                    <div class="error-message">{{ form.light_requirements.errors|join:", " }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group field-with-icon plant-water">
+                <label for="{{ form.water_frequency.id_for_label }}">Water Frequency (days)</label>
+                {{ form.water_frequency }}
+                {% if form.water_frequency.errors %}
+                    <div class="error-message">{{ form.water_frequency.errors|join:", " }}</div>
+                {% endif %}
+                <p class="water-frequency-note">How often should this plant be watered? (in days)</p>
+            </div>
+
+            <div class="form-group field-with-icon plant-description full-width">
+                <label for="{{ form.description.id_for_label }}">Description</label>
+                {{ form.description }}
+                {% if form.description.errors %}
+                    <div class="error-message">{{ form.description.errors|join:", " }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="form-actions">
+            {% if object %}
+                <a href="{% url 'plant-detail' object.id %}" class="btn secondary">Cancel</a>
+                <button type="submit" class="btn submit">Save Changes</button>
+            {% else %}
+                <a href="{% url 'plants-index' %}" class="btn secondary">Cancel</a>
+                <button type="submit" class="btn submit">Add Plant</button>
+            {% endif %}
+        </div>
+    </form>
+</div>
+{% endblock %}

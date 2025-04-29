@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/svg" href="{% static 'images/favicon.svg' %}" />
     <title>{% block title %}Plant Collector{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +30,20 @@
             </span>
           </a>
           <nav class="nav-links">
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'plants-index' %}">All Plants</a>
-            <a href="#">Care Tips</a>
-            <a href="{% url 'about' %}">About</a>
+            {% if user.is_authenticated %}
+              <a href="{% url 'plants-index' %}">All Plants</a>
+              <a href="{% url 'plant-create' %}">Add a Plant</a>
+              <a href="{% url 'about' %}">About</a>
+              <form action="/accounts/logout/" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="logout-link">Log out</button>
+              </form>
+            {% else %}
+              <a href="{% url 'about' %}">About</a>
+              <a href="#" id="login-btn">Login</a>
+              <a href="#" id="signup-btn">Sign Up</a>
+            {% endif %}
           </nav>
-          <a href="#" class="login-button">Sign in</a>
         </div>
       </header>
 
@@ -62,5 +71,69 @@
         </div>
       </footer>
     </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Login</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'home' %}" method="post" class="modal-form">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" required>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-submit">Login</button>
+            </div>
+          </form>
+          <div class="switch-form">
+            Don't have an account? <a href="#" id="switch-to-signup">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Sign Up</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'signup' %}" method="post" class="modal-form">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="signup-username">Username</label>
+              <input type="text" name="username" id="signup-username" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password1">Password</label>
+              <input type="password" name="password1" id="signup-password1" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password2">Confirm Password</label>
+              <input type="password" name="password2" id="signup-password2" required>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-submit">Sign Up</button>
+            </div>
+          </form>
+          <div class="switch-form">
+            Already have an account? <a href="#" id="switch-to-login">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/modal.js' %}"></script>
   </body>
 </html>
